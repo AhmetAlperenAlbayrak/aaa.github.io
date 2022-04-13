@@ -1,35 +1,52 @@
- const countdown = document.querySelector('.countdown');
+const header = document.querySelector('header');
 
- // Set launch date (ms)
- const launchDate = new Date('May 15, 2022 00:00:00').getTime();
+/* --------------------Sticky Navbar---------------------- */
 
-    // Update every second
-    setInterval(() => {
-        // Get todays date and time (ms)
-        const now = new Date().getTime();
-        // Distance from now to the launch date (ms)
-        const distance = launchDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function stickyNavbar() {
+    header.classList.toggle("scrolled", window.pageYOffset > 0);
+}
 
-        // Display result
-        countdown.innerHTML = `
-            <div>${days}<span>Days</span></div>
-            <div>${hours}<span>Hours</span></div>
-            <div>${minutes}<span>Minutes</span></div>
-            <div>${seconds}<span>Seconds</span></div>
-        `;
+stickyNavbar();
 
-        // If launch date passed
-        if (distance < 0) {
-            // Stop countdown
-            clearInterval(x);
-            // Style and output text
-            countdown.style.color = '#17a2b8';
-            countdown.innerHTML = 'Launched!';
-        }
-    });
+// Sticky Navbar on scroll
+window.addEventListener('scroll', stickyNavbar);
+
+
+ 
+ 
+//  const countdown = document.querySelector('.countdown');
+
+//  Set launch date (ms)
+//  const launchDate = new Date('May 15, 2022 00:00:00').getTime();
+
+//     Update every second
+//     setInterval(() => {
+//         Get todays date and time (ms)
+//         const now = new Date().getTime();
+//         Distance from now to the launch date (ms)
+//         const distance = launchDate - now;
+
+//         Time calculations for days, hours, minutes and seconds
+//         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//         Display result
+//         countdown.innerHTML = `
+//             <div>${days}<span>Days</span></div>
+//             <div>${hours}<span>Hours</span></div>
+//             <div>${minutes}<span>Minutes</span></div>
+//             <div>${seconds}<span>Seconds</span></div>
+//         `;
+
+//         If launch date passed
+//         if (distance < 0) {
+//             Stop countdown
+//             clearInterval(x);
+//             Style and output text
+//             countdown.style.color = '#17a2b8';
+//             countdown.innerHTML = 'Launched!';
+//         }
+//     });
