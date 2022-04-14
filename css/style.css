@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: bazaarvoice;
+  src: url("/assets/fonts/bazaarvoice.ttf"); /* IE */
+  src: local('bazaarvoice'), url('/assets/fonts/bazaarvoice.ttf') format('truetype'); /* others */
+}
+@font-face {
+  font-family: gibsonlight;
+  src: url("/assets/fonts/gibson-light-webfont.woff2"); /* IE */
+  src: local('gibsonlight'), url('/assets/fonts/gibson-light-webfont.woff2') format('truetype'); /* others */
+}
+@font-face {
+  font-family: gibsonregular;
+  src: url("/assets/fonts/gibson-regular-webfont.woff2"); /* IE */
+  src: local('gibsonregular'), url('/assets/fonts/gibson-regular-webfont.woff2') format('truetype'); /* others */
+}
+
+@font-face {
+  font-family: gibsonsemibold;
+  src: url("/assets/fonts/gibson-semibold-webfont.woff2"); /* IE */
+  src: local('gibsonsemibold'), url('/assets/fonts/gibson-semibold-webfont.woff2') format('truetype'); /* others */
+}
+
+
 /* -------------------Website Theme------------------------ */
 
 :root {
@@ -31,7 +54,7 @@
 body {
   overflow-x: hidden;
   background-color: var(--bg-color)
-  font-family 'Poppins', sans-serif;
+  font-family 'gibsonregular', sans-serif;
 }
 
 ::selection {
@@ -59,8 +82,8 @@ ul {
 .sub-heading{
   color: var(--heading-color);
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
   border-left: 3px solid var(--main-color-2);
   padding: 0.13rem 0.75rem;
   margin-bottom: 1rem;
@@ -70,7 +93,7 @@ ul {
 .heading {
   color: var(--heading-color);
   font-size: 3rem;
-  font-family: "Abril Fatface", cursive;
+  font-family: "gibsonsemibold", sans-serif;
   font-weight: 400;
   line-height: 1.3;
 }
@@ -108,7 +131,7 @@ nav.container {
   margin-right: 1.5rem;
   height: 120px;
   line-height: 120px;
-  font-family: "Abril Fatface", cursive;
+  font-family: "gibsonsemibold", sans-serif;
   font-size: 1.5rem;
   color: var(--heading-color);
   letter-spacing: 1px;
@@ -116,7 +139,7 @@ nav.container {
 }
 
 .logo span {
-  color: var(--main-color-1);
+  color: var(--main-color-2);
 }
 
 header .logo {
@@ -149,10 +172,10 @@ header.scrolled .logo {
   margin: 0 1rem;
   text-transform: uppercase;
   font-size: 1rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   color: var(--text-color);
   font-weight: 500;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: 0.3s;
 }
 
@@ -303,8 +326,6 @@ header.scrolled .logo {
   width: 112px;
 }
 
-
-
 .showcase-area .circle {
   position: absolute;
   width: 190px;
@@ -319,6 +340,36 @@ header.scrolled .logo {
   left: 100%;
   transform: translate(-50%,-50%);
 }
+
+/* --------------------Countdown Timer---------------------- */
+
+.countdown {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown div {
+  padding: 15px;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  background: var(--main-color-dark-1);
+  opacity: 0.8;
+  margin: 7px;
+}
+
+.countdown div:first-child {
+  background: var(--bg-color-1);
+}
+
+.countdown span {
+  display: block;
+  font-size: 25px;
+}
+
+
 
 
 
@@ -385,14 +436,6 @@ header.scrolled .logo {
   }
   
   @media (max-width: 650px) {
-  
-    .landing img {
-      width: 70%;
-    }
-  
-    .landing h1 {
-      font-size: 40px;
-    }
   
     .countdown {
       font-size: 30px;
