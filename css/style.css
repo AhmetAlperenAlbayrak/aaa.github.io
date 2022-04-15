@@ -239,6 +239,7 @@ header.scrolled .logo {
 }
 
 .showcase-area .text {
+  font-size: 1.3rem;
   margin: 0.8rem 0;
   padding-bottom: 1rem;
 }
