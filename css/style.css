@@ -1,15 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-@font-face {
-  font-family: bazaarvoice;
-  src: url("/assets/fonts/bazaarvoice.ttf"); /* IE */
-  src: local('bazaarvoice'), url('/assets/fonts/bazaarvoice.ttf') format('truetype'); /* others */
-}
-@font-face {
-  font-family: gibsonlight;
-  src: url("/assets/fonts/gibson-light-webfont.woff2"); /* IE */
-  src: local('gibsonlight'), url('/assets/fonts/gibson-light-webfont.woff2') format('truetype'); /* others */
-}
 @font-face {
   font-family: gibsonregular;
   src: url("/assets/fonts/gibson-regular-webfont.woff2"); /* IE */
@@ -37,7 +25,7 @@
   --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
   --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
   --heading-color: hsl(var(--hue-1), 61%, 24%);
-  --text-color: hsl(var(--hue-1), 17%, 63%);
+  --text-color: hsl(var(--hue-1), 17%, 15%);
   --bg-color-transparent: rgba(255, 255, 255, 0.6);
 }
 
@@ -222,6 +210,8 @@ header.scrolled .logo {
   filter: brightness(80%);
 }
 
+
+
 /* --------------------Showcase Area Styling---------------------- */
 
 .showcase-area {
@@ -245,64 +235,42 @@ header.scrolled .logo {
 
 .showcase-area .heading {
   font-size: 3.5rem;
+  padding-bottom: 1rem;
 }
 
 .showcase-area .text {
   margin: 0.8rem 0;
+  padding-bottom: 1rem;
 }
 
 .cta {
-  margin-top: 3.5rem;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
 }
 
-.cta .btn {
+.toggle-btn-social {
+  color: var(--heading-color);
+  min-width: 60px;
+  height: 60px;
+  background-color: var(--bg-color-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.7rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
   margin-right: 1.5rem;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.9rem 1.75rem;
-  border-radius: 17px;
-  background-color: var(--main-color-1);
-  color: #fff;
-  font-size: 0.85rem;
-  letter-spacing: 0.4px;
-  text-transform: capitalize;
-  transition: 0.3s;
+.toggle-btn-social:hover {
+  filter: brightness(80%);
 }
 
-.btn:hover {
-  background-color: var(--main-color-dark-1);
-}
 
-.btn.secondary-btn {
-  position: relative;
-  background-color: transparent;
-  color: var(--main-color-1);
-  font-weight: 500;
-  font-size: 0.9rem;
-  letter-spacing: 0px;
-  border-bottom: 2.5px solid var(--main-color-2);
-  border-radius: 0px;
-  padding: 0.15rem 0;
-}
-
-.btn.secondary-btn::before {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2.5px;
-  bottom: -2.5px;
-  left: 0;
-  background-color: var(--main-color-1);
-  transition: 0.3s ease-in-out;
-}
-
-.btn.secondary-btn:hover::before {
-  width: 100%;
-}
 
 .showcase-image {
   position: relative;
@@ -349,6 +317,7 @@ header.scrolled .logo {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 .countdown div {
@@ -357,7 +326,7 @@ header.scrolled .logo {
   border-radius: 10px;
   background: var(--main-color-dark-1);
   opacity: 0.8;
-  margin: 7px;
+  margin: 6px;
 }
 
 .countdown div:first-child {
@@ -366,106 +335,5 @@ header.scrolled .logo {
 
 .countdown span {
   display: block;
-  font-size: 25px;
+  font-size: 1.6rem;
 }
-
-
-
-
-
-/* --------------------OLD---------------------- */
-  
-  /* .landing-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 50px;
-  }
-
-  .landing-inner img {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-  }
-  
-  .landing {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-  }
-  
-  .landing h1 {
-    font-size: 50px;
-  }
-  
-  .landing p {
-    font-size: 20px;
-  }
-  
-  .countdown {
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .countdown div {
-    padding: 20px;
-    border: 1px #fff solid;
-    border-radius: 10px;
-    background: #000;
-    opacity: 0.7;
-    margin: 5px;
-  }
-  
-  .countdown div:first-child {
-    background: #17a2b8;
-  }
-  
-  .countdown span {
-    display: block;
-    font-size: 25px;
-  }
-  
-  @media (max-width: 650px) {
-  
-    .countdown {
-      font-size: 30px;
-      flex-direction: column;
-    }
-  
-    .countdown div:first-child {
-      display: block;
-      width: 80%;
-      padding: 10px;
-    }
-  }
-  
-  
-  @media (max-height: 600px) {
-    img {
-      width: 20%;
-    }
-  
-    p {
-      display: none;
-    }
-  }
-  
-  @media (max-height: 400px) {
-     img {
-      padding-bottom: 30px;
-    }
-    
-    h1 {
-      display: none;
-    }
-  } */
