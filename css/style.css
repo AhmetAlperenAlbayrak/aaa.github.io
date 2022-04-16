@@ -210,6 +210,46 @@ header.scrolled .logo {
   filter: brightness(80%);
 }
 
+.hamburger {
+  display: none;
+  padding: 1rem 0;
+  height: 12px;
+  width: 25px;
+  box-sizing: content-box;
+  cursor: pointer;
+  position: relative;
+  align-self: center;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--heading-color);
+  border-radius: 3px;
+  position: absolute;
+}
+
+.hamburger .bar:first-child {
+  top: 1rem;
+  transition: top 0.2s .15s, transform 0.3s;
+}
+
+.hamburger .bar:last-child {
+  bottom: 1rem;
+  transition: bottom 0.2s .15s, transform 0.3s;
+}
+
+body.open .hamburger .bar:first-child {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: top 0.2s, transform 0.3s 0.1s; 
+}
+
+body.open .hamburger .bar:last-child {
+  bottom: 50%;
+  transform: translateY(50%) rotate(45deg);
+  transition: bottom 0.2s, transform 0.3s 0.1s; 
+}
 
 
 /* --------------------Showcase Area Styling---------------------- */
@@ -337,4 +377,224 @@ header.scrolled .logo {
 .countdown span {
   display: block;
   font-size: 1.6rem;
+}
+
+
+
+/* --------------------1000 px Screens---------------------- */
+
+@media (max-width: 1000px){
+  .sub-heading {
+    font-size: 0.75rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .showcase-area .heading {
+    font-size: 2.7rem;
+  }
+
+  .text {
+    font-size: 0.84rem;
+    margin: 1.3rem 0;
+  }
+
+  .toggle-btn-social {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+  }
+
+  .logo {
+    font-size: 1.45rem;
+  }
+
+  header .logo {
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+  }
+
+  .showcase-area {
+    padding: 100px 0;
+  }
+
+  .showcase-area .container {
+    grid-template-columns: 1fr 400px;
+    height: 450px;
+  }
+
+}
+
+/* --------------------768 px Screens---------------------- */
+
+@media (max-width:768px) {
+  :root {
+    --section-padding: 4.5rem
+  }
+
+  .dots {
+    width: 65px;
+  }
+
+  .square {
+    width: 55px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+
+  .links {
+    order: 3;
+    flex-basis: 100%; /* width 100% */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.2rem;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  header nav{
+    justify-content: space-between;
+  }
+
+  .links ul{
+    position: relative ;
+    flex-direction: column;
+  }
+
+  .links ul::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: .5px;
+    background-color: var(--heading-color);
+    opacity: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+
+  .overlay{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 6;
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+
+  header{
+    height: 505px;
+    max-height: 100px;
+    overflow: auto;
+  }
+
+  header.scrolled{
+    height: 485px;
+    max-height: 80px;
+  }
+
+  body.open header{
+    max-height: 505px;
+    background-color: var(--bg-color-2);
+  }
+
+  body.open .overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.open .links ul::after{
+    opacity: 0.7;
+    width: 100%;
+  }
+
+  body.open header.scrolled{
+    max-height: 485px;
+  }
+
+  body.open .links{
+    opacity: 1;
+  }
+
+  .showcase-area .container{
+    grid-template-columns: 1fr;
+    height: revert;
+    justify-items: center;
+    row-gap: 4rem;
+  }
+
+  .showcase-image{
+    min-height: revert;
+    height: 100vw;
+    max-height: 570px;
+    max-width: 450px;
+    margin-top: 0px;
+    border-radius: 40px;
+    background-image: linear-gradient(124deg, var(--main-color-2) 50%, var(--main-color-1) 50%);
+    border-radius: 0 0 80px 80px;
+  }
+
+  .showcase-info{
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .showcase-area .text{
+    margin: 0.2rem 0;
+  }
+
+  .cta {
+    margin-top: 1rem;
+  }
+
+  .showcase-area .circle {
+    width: 120px;
+  }
+
+  .showcase-area .dots {
+    top: 30%;
+    left: 100%;
+  }
+
+  .nav-link {
+    margin: 1.5rem 0;
+    color: var(--heading-color);
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .heading br{
+    display: none;
+  }
+
+  .countdown {
+    font-size: 1.2rem;
+  
+  }
+
+  .countdown span {
+    font-size: 1.2rem;
+  }
+  
 }

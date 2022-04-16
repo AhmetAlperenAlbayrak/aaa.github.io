@@ -1,4 +1,8 @@
+// const {links} = require("express/lib/response");
+
 const header = document.querySelector('header');
+
+const hamburger = document.querySelector(".hamburger");
 
 /* --------------------Sticky Navbar---------------------- */
 
@@ -60,3 +64,15 @@ sr.reveal(".showcase-image", {origin:"top", delay:700});
             countdown.innerHTML = 'Launched!';
         }
     });
+
+/* --------------------Open & Close Navbar Menu---------------------- */
+
+hamburger.addEventListener('click', () => {
+    document.body.classList.toggle('open');
+    document.body.classList.toggle('stopScrolling');
+});
+
+links.forEach(link => link.addEventListener('click', () => {
+    document.body.classList.remove('open');
+    document.body.classList.remove('stopScrolling');
+}));
