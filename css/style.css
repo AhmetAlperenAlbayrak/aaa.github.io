@@ -540,13 +540,12 @@ body.open .hamburger .bar:last-child {
 
   .showcase-image{
     min-height: revert;
-    height: 100vw;
+    height: 80vw;
     max-height: 570px;
-    max-width: 450px;
+    max-width: 500px;
     margin-top: 0px;
-    border-radius: 40px;
     background-image: linear-gradient(124deg, var(--main-color-2) 50%, var(--main-color-1) 50%);
-    border-radius: 0 0 80px 80px;
+    border-radius: 40px 40px 80px 80px;
   }
 
   .showcase-info{
@@ -556,6 +555,7 @@ body.open .hamburger .bar:last-child {
 
   .showcase-area .text{
     margin: 0.2rem 0;
+    
   }
 
   .cta {
@@ -597,4 +597,27 @@ body.open .hamburger .bar:last-child {
     font-size: 1.2rem;
   }
   
+}
+
+/* --------------------360 px Screens---------------------- */
+
+@media (max-width:385px) {
+  .showcase-area .text{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 0.9fr ;
+  }
+
+  .countdown div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown div:last-child{
+    display: none ;
+  }
+
+  .showcase-image {
+    display: none;
+  }
 }
